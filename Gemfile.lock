@@ -153,7 +153,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  activeadmin
+  activeadmin (= 0.6.0)
   coffee-rails (~> 3.2.1)
   jquery-rails
   rails (= 3.2.13)
