@@ -1,4 +1,12 @@
 VoyagerWebStore::Application.routes.draw do
+  get "navigation_controller/index"
+
+  #set the root to the navigation homepage
+  root :to => 'navigation#index'
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
