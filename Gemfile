@@ -8,6 +8,7 @@ gem 'rails', '3.2.13'
 gem 'sqlite3'
 gem "activeadmin", "0.6.0"
 
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -20,7 +21,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 2.3.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
