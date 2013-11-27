@@ -7,7 +7,7 @@ class CreateProducts < ActiveRecord::Migration
       t.decimal :price
       t.integer :stock_quantity
       t.boolean :sale
-      t.string :category
+      t.integer :category_id
 
       t.timestamps
     end

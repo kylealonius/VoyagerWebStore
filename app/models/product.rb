@@ -4,4 +4,5 @@ class Product < ActiveRecord::Base
   #associations
   has_many :lineitems
   has_many :orders, :through => :line_items
+  belongs_to :category
 end
