@@ -3,6 +3,6 @@ class Product < ActiveRecord::Base
   
   #associations
   has_many :lineitems
-  has_many :orders, :through => :line_items
+  has_many :orders, :through => :lineitems
   belongs_to :category
 end

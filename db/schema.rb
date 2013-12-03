@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131127173401) do
+ActiveRecord::Schema.define(:version => 20131203185445) do
+
+  create_table "abouts", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -52,6 +59,16 @@ ActiveRecord::Schema.define(:version => 20131127173401) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "contacts", :force => true do |t|
+    t.string   "title"
+    t.string   "phone_title"
+    t.string   "email_title"
+    t.text     "phone_content"
+    t.text     "email_content"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "customers", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -83,9 +100,18 @@ ActiveRecord::Schema.define(:version => 20131127173401) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "pages", :force => true do |t|
+    t.string   "about_title"
+    t.text     "about_content"
+    t.string   "contact_title"
+    t.text     "contact_content"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
   create_table "products", :force => true do |t|
     t.string   "name"
-    t.string   "description"
+    t.text     "description",    :limit => 255
     t.string   "image"
     t.decimal  "price"
     t.integer  "stock_quantity"

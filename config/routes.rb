@@ -3,6 +3,10 @@ VoyagerWebStore::Application.routes.draw do
 
   #set the root to the navigation homepage
   root :to => 'navigation#index'
+  
+  match '/about' => 'navigation#about', :as => :about, :via => :get
+  
+  match '/contact' => 'navigation#contact', :as => :contact, :via => :get
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
