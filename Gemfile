@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 gem "activeadmin", "0.6.0"
+gem 'kaminari'
 
 
 # Gems used only for assets and not required

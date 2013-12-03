@@ -8,6 +8,12 @@ VoyagerWebStore::Application.routes.draw do
   
   match '/contact' => 'navigation#contact', :as => :contact, :via => :get
 
+  match '/search_results' => 'navigation#search_results', :as => :search_results, :via => :post
+  
+  match '/category/:id' => 'navigation#category', :as => :category, :via => :get
+  
+  match '/show/:id' => 'navigation#show', :as => :show, :via => :get
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 

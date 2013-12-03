@@ -3,19 +3,34 @@
 <head>
   <title>VoyagerWebStore</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "navigation", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-<h1><%= image_tag('voyager_logo.png') %></h1>
-<ul>
-  <li><%=link_to "Home", root_path %></li>
+<h1 id="logo"><%=link_to image_tag('voyager_logo.png'), root_path %></h1>
+<h1 id="shopping cart"></h1>
+<ul id="main_nav">
+  <li><%=link_to "Skateboards", category_path(1) %></li>
+  <li><%=link_to "Snowboards", category_path(2) %></li>
   <li><%=link_to "About", about_path %></li>
   <li><%=link_to "Contact", contact_path %></li>
+  <li id="search_item">
+    <div id="search">
+      <%= form_tag search_results_path do %>
+        <%= text_field_tag :keywords %>
+        <%= select_tag :category, content_tag(:option, 'All', :value=>"0") + options_from_collection_for_select(Category.all, "id", "name") %>
+        <%= submit_tag 'Search' %>
+      <% end %>
+    </div>
+  </li>
 </ul>
+<div id="content">
+  
 <%= yield %>
 
+</div>
 </body>
 </html>

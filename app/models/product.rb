@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  attr_accessible :category, :description, :image, :name, :price, :sale, :stock_quantity
+  attr_accessible :category, :description, :image, :name, :price, :sale, :stock_quantity, :category_id
   
   #associations
   has_many :lineitems

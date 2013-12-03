@@ -1,0 +1,29 @@
+<div class="product">
+  <h2>
+    <%= link_to product.name, show_path(product) %>
+  </h2>
+  <% if product.image.present? %>
+    <p>
+      <%= image_tag product.image %>
+    </p>
+  <% else %>
+    <p class="no_image">
+      <em>No Product image.</em>
+    </p>
+  <% end %>
+  <p>
+    <b>Description:</b>
+    <%= product.description  %>
+  </p>
+   <p>
+    <b>Price:</b>
+    <%= product.price  %>
+  </p>
+  <p>
+    <% if product.sale %>
+      It's on SALE!
+    <% else %>
+      Not on sale right now, check back later
+    <% end %>
+  </p>
+</div>
