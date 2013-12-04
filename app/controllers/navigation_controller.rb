@@ -25,7 +25,7 @@ class NavigationController < ApplicationController
     if params[:category] == "0"
       @products = Product.where("name LIKE ? OR description LIKE ?", "%#{params[:keywords]}%", "%#{params[:keywords]}%").page(params[:page]).per(6)
     else
-      @products_before_paginate = Product.where(:category_id => params[:category]).where("name LIKE ? OR description LIKE ?", "%#{params[:keywords]}%", "%#{params[:keywords]}%").page(params[:page]).per(6)
+      @products = Product.where(:category_id => params[:category]).where("name LIKE ? OR description LIKE ?", "%#{params[:keywords]}%", "%#{params[:keywords]}%").page(params[:page]).per(6)
     end
     get_session
   end

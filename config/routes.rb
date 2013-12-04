@@ -12,6 +12,8 @@ VoyagerWebStore::Application.routes.draw do
 
   match '/search_results' => 'navigation#search_results', :as => :search_results, :via => :post
   
+  match '/search_results' => 'navigation#search_results', :as => :search_results, :via => :get
+  
   match '/category/:id' => 'navigation#category', :as => :category, :via => :get
   
   match '/show/:id' => 'navigation#show', :as => :show, :via => :get
