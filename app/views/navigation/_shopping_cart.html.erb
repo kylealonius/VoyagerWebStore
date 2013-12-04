@@ -2,8 +2,8 @@
 <% @shopping_cart_items.each do |item| %>
   <% if count <= 3 %>
     <p><%= item.name %></p>
-    <p class="price"><%= number_to_currency(item.price) %> <%= link_to 'Remove', remove_from_cart_path(item), :method => :post %><% count += 1 %></p>
+    <p><%= number_to_currency(item.price) %> <%= link_to 'Remove', remove_from_cart_path(item), :method => :post %><% count += 1 %></p>
   <% end %>
 <% end %>
 
-<p id="checkout"><%= link_to 'CHECKOUT', checkout_path, :method => :post %></p>
+<p id="checkout"><%= link_to 'CHECKOUT', new_customer_path, :method => :get %></p>

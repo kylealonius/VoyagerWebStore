@@ -1,6 +1,8 @@
 VoyagerWebStore::Application.routes.draw do
   get "navigation_controller/index"
 
+  resources :customers
+
   #set the root to the navigation homepage
   root :to => 'navigation#index'
   
@@ -18,9 +20,11 @@ VoyagerWebStore::Application.routes.draw do
   
   match '/remove_from_cart/:id' => 'navigation#remove_from_cart', :as => :remove_from_cart, :via => :post
   
-  match '/checkout' => 'navigation#checkout', :as => :checkout, :via => :post
+  match '/checkout/:id' => 'navigation#checkout', :as => :checkout, :via => :post
   
-  match '/checkout/:id' => 'navigation#single_checkout', :as => :single_checkout, :via => :post
+  match '/customer/new' => 'customers#new', :as => :new_customer, :via => :get
+  
+  match 'customers' => 'customers#create', :as => :create_customer, :via => :post
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

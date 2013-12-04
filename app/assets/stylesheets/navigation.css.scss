@@ -38,6 +38,7 @@
 
 #shopping_cart
 {
+  position: relative;
   padding: 7px;
   margin-top: -280px;
   float: right;
@@ -57,11 +58,6 @@
   color: red;
   border: 3px inset black;
   padding: 2px;
-}
-
-#price
-{
-  text-align: center;
 }
 
 .product h2

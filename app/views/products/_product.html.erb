@@ -9,7 +9,7 @@
     <% else %>      
       <%= link_to 'Add to Shopping Cart', add_to_cart_path(product), :method => :post %>
     <% end %>
-    <%= link_to 'Purchase Now', single_checkout_path(product), :method => :post %>
+    <%= link_to 'Purchase Now', checkout_path(product), :method => :post %>
   </div> 
   <h2>
     <%= link_to product.name, show_path(product) %>
