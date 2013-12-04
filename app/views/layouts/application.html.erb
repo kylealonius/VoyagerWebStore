@@ -11,7 +11,15 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 <h1 id="logo"><%=link_to image_tag('voyager_logo.png'), root_path %></h1>
-<h1 id="shopping cart"></h1>
+<div id="shopping_cart">
+  <% if session[:cart] == [] or session[:cart].nil? %>
+    <h2>There are no items in the cart</h2>
+  <% else %>
+    <h2>Shopping Cart:</h2>
+    <%= render 'shopping_cart' %>
+  <% end %>
+  
+</div>
 <ul id="main_nav">
   <li><%=link_to "Skateboards", category_path(1) %></li>
   <li><%=link_to "Snowboards", category_path(2) %></li>

@@ -2,6 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.actions 
+{
+  text-align: right;
+  padding-bottom: 10px;
+}
+
+.actions a
+{
+  display: block;
+}
+
+#logo
+{
+  position: relative;
+}
+
 .product
 {
   padding: 10px;
@@ -20,6 +36,34 @@
   margin: 0 auto;
 }
 
+#shopping_cart
+{
+  padding: 7px;
+  margin-top: -280px;
+  float: right;
+  border: 2px solid black;
+  width: 400px;
+}
+
+#shopping_cart p
+{
+  text-align: center;
+  font-weight: bold;
+}
+
+#checkout a
+{
+  text-decoration: none;
+  color: red;
+  border: 3px inset black;
+  padding: 2px;
+}
+
+#price
+{
+  text-align: center;
+}
+
 .product h2
 {
   font-size: 16px;
@@ -29,6 +73,11 @@
 {
   width: 400px;
   height: 250px;
+}
+
+#main_nav
+{
+  padding-bottom: 20px;
 }
 
 #main_nav ul
@@ -41,6 +90,11 @@
   display: inline;
   padding-left: 10px;
   padding-right:10px;
+}
+
+#main_nav li a
+{
+  text-decoration: none;
 }
 
 #search
@@ -62,4 +116,9 @@
 {
   width: 150px;
   height: 280px;
+}
+
+.pagination
+{
+  font-size: 18px;
 }

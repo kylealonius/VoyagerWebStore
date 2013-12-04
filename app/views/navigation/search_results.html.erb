@@ -1,5 +1,7 @@
 <h2>Search Results</h2>
 
+<%= paginate @products %>
+
 <%= render @products %>
 
 <% if @products.length == 0 %>

@@ -1,4 +1,16 @@
 <div class="product">
+  <div class="actions">
+    <% if session[:cart].nil? == false %>
+      <% if session[:cart].include?(product.id) %>
+        <%= link_to 'Remove from Shopping Cart', remove_from_cart_path(product), :method => :post %>
+      <% else %>      
+        <%= link_to 'Add to Shopping Cart', add_to_cart_path(product), :method => :post %>
+      <% end %>
+    <% else %>      
+      <%= link_to 'Add to Shopping Cart', add_to_cart_path(product), :method => :post %>
+    <% end %>
+    <%= link_to 'Purchase Now', single_checkout_path(product), :method => :post %>
+  </div> 
   <h2>
     <%= link_to product.name, show_path(product) %>
   </h2>
@@ -17,7 +29,7 @@
   </p>
    <p>
     <b>Price:</b>
-    <%= product.price  %>
+    <%= number_to_currency(product.price)  %>
   </p>
   <p>
     <% if product.sale %>

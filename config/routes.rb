@@ -14,6 +14,14 @@ VoyagerWebStore::Application.routes.draw do
   
   match '/show/:id' => 'navigation#show', :as => :show, :via => :get
 
+  match '/add_to_cart/:id' => 'navigation#add_to_cart', :as => :add_to_cart, :via => :post
+  
+  match '/remove_from_cart/:id' => 'navigation#remove_from_cart', :as => :remove_from_cart, :via => :post
+  
+  match '/checkout' => 'navigation#checkout', :as => :checkout, :via => :post
+  
+  match '/checkout/:id' => 'navigation#single_checkout', :as => :single_checkout, :via => :post
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
